@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Page Review</title>
+  <link rel="stylesheet" href="pagereview.css">
+</head>
+<body>
+  <div class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="userreviews.html">Customer Favorites</a></li>
+      <li><a href="books.html">Books</a></li>
+    </ul>
+  </div>
+
+  <div id="main">
+    <h1 id="title">My suggestion!</h1>
+    <p id="description">Time to pick the next book for us to add, please fill out the form below</p>
+
+    <form id="survey-form">
+      <!-- Labels and input fields -->
+      <label for="name">Book Name:</label><br>
+      <input type="text" id="name" name="name" required placeholder=""><br>
+
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" required placeholder=""><br>
+
+      <label for="number">Mobile:</label><br>
+      <input type="tel" id="number" name="mobile" pattern="[0-9]{10}" placeholder="" required><br>
+
+      <label for="genre">Which genre would you like to read more of?</label><br>
+      <select id="genre" name="genre">
+        <option value="adventure">Adventure</option>
+        <option value="fiction">Fiction</option>
+        <option value="history">History</option> <!-- Fixed duplicate value -->
+        <option value="non-fiction">Non-Fiction</option>
+        <option value="philosophy">Philosophy</option>
+        <option value="science">Science</option>
+        <option value="science-fiction">Science-Fiction</option>
+      </select>
+      <br>
+
+      <fieldset>
+        <legend>Rate the book you just recommend, 5 being the highest</legend>
+        <!-- Radio buttons for rating -->
+        <label for="rating-1">1</label>
+        <input type="radio" id="rating-1" name="rating" value="1">
+  
+        <label for="rating-2">2</label>
+        <input type="radio" id="rating-2" name="rating" value="2">
+  
+        <label for="rating-3">3</label>
+        <input type="radio" id="rating-3" name="rating" value="3">
+  
+        <label for="rating-4">4</label>
+        <input type="radio" id="rating-4" name="rating" value="4">
+  
+        <label for="rating-5">5</label>
+        <input type="radio" id="rating-5" name="rating" value="5">
+      </fieldset>
+
+      <fieldset>
+        <legend>Would you recommend this book to a friend?</legend>
+        <!-- Checkboxes for recommendation -->
+        <label for="checkbox-yes">Yes</label>
+        <input type="checkbox" name="recommendation" id="checkbox-yes" value="yes">
+  
+        <label for="checkbox-no">No</label>
+        <input type="checkbox" name="recommendation" id="checkbox-no" value="no">
+      </fieldset>
+
+      <label for="comment">Please leave a review for the book</label><br>
+      <textarea name="comment" id="comment"></textarea><br>
+      <div>
+
+        <button type="submit"><span></span>Submit</button>
+
+
+
+      </div>
+
+
+    </form>
+  </div>
+
+  <footer>
+    <span>&copy; <span id="currentYear"></span> Book Review. All rights reserved.</span>
+  </footer>
+
+  <script src="formSubmission.js"></script>
+</body>
+</html>

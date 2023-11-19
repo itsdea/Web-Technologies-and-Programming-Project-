@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/styles/custom.css">
+
+    <title>Document</title>
+</head>
+<body>
+
+
+    <div class="navbar"> 
+       
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="review.html">Review</a></li>
+            <li><a href="books.html">Books</a></li>
+          </ul>
+</div>
+
+    <h2>Review a Book</h2>
+
+    <form id="reviewForm">
+        <div>
+            <label for="fullName">Name Surname</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Enter name and surname" required>
+            <span id="fullNameSpn"></span>
+        </div>
+
+        <div>
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter username" required>
+            <span id="usernameSpn"></span>
+        </div>
+
+        <div>
+            <label for="email">Email address</label>
+            <input  id="email" name="email" placeholder="Enter your email address" required>
+            <span id="emailSpn"></span>
+        </div>
+
+
+        <div>
+            <select id="select_book">
+                <option value="default">Please choose a book</option>
+                <option value="Pride & Prejudice">Pride & Prejudice <p id="author">by Jane Austen</p></option>
+                <option value="The Lord Of Rings">The Lord Of The Rings <p id="author">by John R. R. Tolkien</p></option>
+                <option value="The Handmaid's Tale">The Handmaid's Tale <p id="author">by Margaret Atwood</p></option>
+                <option value="The Murder of Roger Ackroyd">The Murder of Roger Ackroyd <p id="author">by Agatha Christie</p></option>
+                <option value="Crime & Punishment">Crime & Punishment <p id="author">by Fyodor Dostoevsky</p></option>
+            </select>
+            <span id="selectSpn"></span>
+    
+        </div>
+
+        <div>
+            <label for="descriptionlabel">Describe your review</label>
+            <textarea id="description" name="description"></textarea>
+            <span id="descriptionSpn"></span>
+        </div>
+        
+            <button id="submitBtn" onclick="validateAndSubmit(event)">Submit</button>
+        
+    
+    <!--POPUP --> 
+    
+    <div class="modal" id="modal">
+        <div class="modal-inner">
+            <h2>Confirmation</h2>
+            <p>
+                Are you sure you want to submit your review form?
+            </p>
+            
+            <button1 id="closeModal" onclick="saveInformation()">Confirm</button1>
+            <button2 id="closeModal1">Cancel</button2>
+            
+        </div>
+    </div>
+
+    </form>
+
+    <!--local storage to store reviews in books page-->
+
+    <script>
+        document.getElementById('reviewForm').addEventListener('submit', function (event) {
+            event.preventDefault(); 
+
+            
+            var descriptionValue = document.getElementById('description').value;
+
+            
+            localStorage.setItem('description', descriptionValue);
+
+           
+            window.location.href = 'books.html';
+        });
+    </script>
+    
+    
+
+
+    <footer>
+        <span>&copy; <span id="currentYear"></span> Book Review. All rights reserved.</span>
+    </footer>
+
+
+    <script src="assets/scripts/custom.js"></script>
+    
+</body>
+</html>
